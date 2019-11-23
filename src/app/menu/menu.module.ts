@@ -4,7 +4,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
-import { MenuComponent } from './menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
     declarations: [MenuComponent],

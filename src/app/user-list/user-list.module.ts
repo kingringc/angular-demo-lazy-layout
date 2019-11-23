@@ -6,13 +6,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
+import { AppAlertModule } from '../app-alert';
 import { UserListRoutingModule } from './user-list-routing.module';
-import { UserListComponent } from './user-list.component';
+import { UserListComponent } from './components';
 
 @NgModule({
     declarations: [UserListComponent],
     entryComponents: [],
     imports: [
+        AppAlertModule,
         CommonModule,
         CdkTableModule,
         FlexLayoutModule,

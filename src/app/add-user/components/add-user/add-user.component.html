@@ -1,3 +1,4 @@
+<app-alert [displayMessage]="message"></app-alert>
 <div fxLayout="column" fxLayoutAlign="space-between center">
     <mat-card>
     <mat-card-title>
@@ -8,12 +9,24 @@
         <form action="" [formGroup]="userForm" class="min-width">
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="First Name" formControlName="firstName">
+                <!-- <mat-hint>* mandatory accepts only character.</mat-hint> -->
+                <mat-error *ngIf="userForm.controls['firstName'].hasError('required') || userForm.controls['firstName'].hasError('pattern')">
+                    please enter a valid first name.
+                </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="Last Name" formControlName="lastName">
+                <!-- <mat-hint>* mandatory accepts only character.</mat-hint> -->
+                <mat-error *ngIf="userForm.controls['lastName'].hasError('required') || userForm.controls['lastName'].hasError('pattern')">
+                        please enter a valid last name.
+                    </mat-error>
             </mat-form-field>
             <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="Id" formControlName="id">
+                <!-- <mat-hint>* mandatory accepts only number.</mat-hint> -->
+                <mat-error *ngIf="userForm.controls['id'].hasError('required') || userForm.controls['id'].hasError('pattern')">
+                        please enter a valid id.
+                    </mat-error>
             </mat-form-field>
         </form>
     </mat-card-content>

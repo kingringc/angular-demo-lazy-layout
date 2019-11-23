@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { FakeBackendService } from './http-fake-service/fake-backend-service';
-import { MenuModule } from './menu/menu.module';
+import { MenuModule } from './menu';
 
 @NgModule({
     declarations: [
@@ -18,8 +16,8 @@ import { MenuModule } from './menu/menu.module';
         AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
+        FlexLayoutModule,
         HttpClientModule,
-        InMemoryWebApiModule.forRoot(FakeBackendService),
         MenuModule
     ],
     providers: [],

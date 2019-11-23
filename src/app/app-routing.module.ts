@@ -14,6 +14,11 @@ const routes: Routes = [
         path: '',
         redirectTo: '/add',
         pathMatch: 'full'
+    },
+    {
+        path: '**',
+        redirectTo: '/add',
+        pathMatch: 'full'
     }
 ];
 

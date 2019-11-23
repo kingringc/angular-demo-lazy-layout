@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -7,13 +8,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { AddUserRoutingModule } from './add-user-routing.module';
-import { AddUserComponent } from './add-user.component';
+import { AppAlertModule } from '../app-alert';
+import { AddUserComponent } from './components';
 
 @NgModule({
     declarations: [AddUserComponent],
     entryComponents: [AddUserComponent],
     imports: [
+        CommonModule,
         AddUserRoutingModule,
+        AppAlertModule,
         FormsModule,
         FlexLayoutModule,
         MatButtonModule,
