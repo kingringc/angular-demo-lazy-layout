@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { delay } from 'rxjs/operators';
+
 import { User } from '../../../shared/User';
 import { UserCache } from '../../service';
 
@@ -14,15 +14,14 @@ export class UserListComponent implements OnInit {
     displayedColumns: string[] = ['id', 'firstName', 'lastName'];
     dataSource;
     isLoading: boolean;
-
+  
     @ViewChild(MatSort, {static: true}) sort: MatSort;
-
+  
     constructor(private readonly userService: UserCache) {
     }
-
+  
     ngOnInit(): void {
-        this.isLoading = true; // Loading for the spinner inside table
-        // data comes quickly, so added a delay to see the spinner
+        this.isLoading = true;
         this.userService.getUsers()
             .subscribe((data: User[]) => {
                 this.isLoading = false; // User List Spinner 
