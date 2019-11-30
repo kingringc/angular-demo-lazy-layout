@@ -13,14 +13,20 @@ import { UserCache } from '../../service';
 export class UserListComponent implements OnInit {
     displayedColumns: string[] = ['id', 'firstName', 'lastName'];
     dataSource;
+    isLoading: boolean;
+  
     @ViewChild(MatSort, {static: true}) sort: MatSort;
+  
     constructor(private readonly userService: UserCache) {
     }
+  
     ngOnInit(): void {
+        this.isLoading = true;
         this.userService.getUsers()
             .subscribe((data: User[]) => {
+                this.isLoading = false; // User List Spinner 
                 this.dataSource = new MatTableDataSource(data);
                 this.dataSource.sort = this.sort;
-            });
+        });
     }
 }

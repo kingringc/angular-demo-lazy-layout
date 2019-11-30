@@ -2,3 +2,33 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/**************** Spinner ***************/
+.mat-progress-spinner{
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.mat-progress-spinner svg {
+    width: 30px !important;
+    height: 30px !important;
+}
+
+.mat-raised-button.mat-primary:disabled, .mat-raised-button.mat-secondary:disabled {
+    cursor: not-allowed;
+}
+
+/******* Button Loading Spinner *************/
+.btn-spinner mat-icon .mat-progress-spinner{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.btn-spinner mat-icon .mat-progress-spinner svg {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.btn-spinner mat-icon .mat-progress-spinner.mat-accent circle, .btn-spinner mat-icon .mat-spinner.mat-accent circle {
+    stroke: #fff;
+}

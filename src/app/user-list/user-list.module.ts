@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 import { AppAlertModule } from '../app-alert';
 import { UserListRoutingModule } from './user-list-routing.module';
@@ -21,7 +22,8 @@ import { UserListComponent } from './components';
         MatCardModule,
         MatTableModule,
         MatSortModule,
-        UserListRoutingModule
+        UserListRoutingModule,
+        MatProgressSpinnerModule
     ],
     exports: [UserListComponent]
 })

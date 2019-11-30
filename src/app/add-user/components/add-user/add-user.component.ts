@@ -11,10 +11,16 @@ import { UserService } from 'src/app/services';
 export class AddUserComponent implements OnInit {
     userForm: FormGroup;
     message: {[key: string]: string};
+    isUserAdded: boolean;
+    /**
+     * Add the users
+    */
     addUser(): void {
         const userData: User = this.userForm.value;
-        this.userService.addUser(userData)
+        this.isUserAdded = true;
+        this.userService.addUser(userData).pipe(delay(1000))
             .subscribe(data => {
+                this.isUserAdded = false;
                 this.message = { serverMessage: 'Success ! user added.'};
                 this.initUserForm();
             });

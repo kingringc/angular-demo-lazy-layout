@@ -6,7 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatProgressSpinnerModule, MatIconModule } from '@angular/material';
 import { AddUserRoutingModule } from './add-user-routing.module';
 import { AppAlertModule } from '../app-alert';
 import { AddUserComponent } from './components';
@@ -24,7 +24,9 @@ import { AddUserComponent } from './components';
         MatCardModule,
         MatFormFieldModule,
         MatInputModule,
-        ReactiveFormsModule
+        ReactiveFormsModule, 
+        MatProgressSpinnerModule,
+        MatIconModule
     ],
     exports: [AddUserComponent]
 })
